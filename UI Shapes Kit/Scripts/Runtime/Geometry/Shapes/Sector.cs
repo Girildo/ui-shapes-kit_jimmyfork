@@ -8,6 +8,16 @@ namespace ThisOtherThing.UI.Shapes
 	[RequireComponent(typeof(CanvasRenderer))]
 	public class Sector : MaskableGraphic, IShape
 	{
+		public override Color color
+        {
+            get => ShapeProperties.FillColor;
+            set
+            {
+                ShapeProperties.FillColor = value;
+                ForceMeshUpdate();
+            }
+        }
+		
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 

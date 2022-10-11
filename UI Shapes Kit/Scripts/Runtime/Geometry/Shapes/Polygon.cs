@@ -10,6 +10,15 @@ namespace ThisOtherThing.UI.Shapes
 	public class Polygon : MaskableGraphic, IShape
 	{
 
+		public override Color color
+        {
+            get => ShapeProperties.FillColor;
+            set
+            {
+                ShapeProperties.FillColor = value;
+                ForceMeshUpdate();
+            }
+        }
 		public GeoUtils.ShapeProperties ShapeProperties =
 			new GeoUtils.ShapeProperties();
 
